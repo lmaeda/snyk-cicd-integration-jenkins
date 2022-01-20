@@ -3,9 +3,7 @@ pipeline {
 
     // Install the Jenkins tools you need for your project / environment
     tools {
-        def mvnSettings = 'Location of the file'
-        sh "mvn clean install --settings ${mvnSettings} -P foo"
-        maven 'maven-3.8.3' // Refers to a global tool configuration for Maven called 'maven-3.8.3'
+        mvn 'maven-3.8.3' // Refers to a global tool configuration for Maven called 'maven-3.8.3'
     }
 
     // Pull your Snyk token from a Jenkins encrypted credential
