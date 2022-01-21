@@ -68,7 +68,7 @@ pipeline {
         // Consider using --severity-threshold=<low|medium|high> for more granularity (see snyk help for more info).
         stage('Snyk Test using Snyk CLI') {
             steps {
-                sh './snyk test'
+                sh './snyk -d -json-output-file=../snyk_test_json_output test'
             }
         }
 
