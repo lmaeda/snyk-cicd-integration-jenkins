@@ -61,8 +61,8 @@ pipeline {
 
         stage('Build') {
             steps {
-              sh 'sh +e'
-              sh 'mvn -e -X package'
+              //sh 'mvn -e -X package'
+              sh './mvnw test -Dsnyk.skip'
             }
         }
 
@@ -71,7 +71,6 @@ pipeline {
         stage('Snyk Test using Snyk CLI') {
             steps {
                 sh './snyk test'
-                sh 'sh -e'
             }
         }
 
