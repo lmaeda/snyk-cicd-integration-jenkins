@@ -77,7 +77,7 @@ pipeline {
         stage('Snyk Monitor using Snyk CLI') {
             steps {
                 // Use your own Snyk Organization with --org=<your-org>
-                sh './snyk monitor --org=demo-applications'
+                sh './snyk monitor --org=luc.maeda'
             }
         }
     }
