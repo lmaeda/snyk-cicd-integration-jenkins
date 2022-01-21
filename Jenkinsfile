@@ -61,8 +61,8 @@ pipeline {
 
         stage('Build') {
             steps {
-              //sh 'mvn -e -X package'
-              sh './mvnw test -Dsnyk.skip'
+              sh 'mvn -e -X package'
+              //sh './mvnw test -Dsnyk.skip'
             }
         }
 
@@ -70,7 +70,7 @@ pipeline {
         // Consider using --severity-threshold=<low|medium|high> for more granularity (see snyk help for more info).
         stage('Snyk Test using Snyk CLI') {
             steps {
-                sh './snyk test --fail-on=upgradable --severity-threshold=medium'
+                sh './snyk test --fail-on=upgradable --severity-threshold=medium --org=luc.maeda'
             }
         }
 
