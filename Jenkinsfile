@@ -29,7 +29,7 @@ pipeline {
         stage('Git Clone') {
             steps {
                 //git url: 'https://github.com/lmaeda/simple-java-maven-app.git'
-                git url: 'https://github.com/lmaeda/testproject-java-maven-app.git'
+                git url: 'https://github.com/lmaeda/testproject-java-maven.git'
                 sh 'ls -la'
             }
         }
