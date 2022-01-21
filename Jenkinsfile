@@ -28,7 +28,7 @@ pipeline {
 
         stage('Git Clone') {
             steps {
-                git url: 'https://github.com/jeff-snyk-demo/testproject-java-maven.git'
+                git url: 'https://github.com/lmaeda/testproject-java-maven.git'
                 sh 'ls -la'
             }
         }
