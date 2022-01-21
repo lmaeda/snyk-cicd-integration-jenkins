@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     // Install the Jenkins tools you need for your project / environment
-    //tools {
-        //maven 'maven-3.6.0' // Refers to a global tool configuration for Maven called 'maven-3.8.3'
-    //}
+    tools {
+        maven 'maven-3.8.4' // Refers to a global tool configuration for Maven called 'maven-3.8.3'
+    }
 
     // Pull your Snyk token from a Jenkins encrypted credential
     // (type "Secret text"... see https://jenkins.io/doc/book/using/using-credentials/#adding-new-global-credentials)
