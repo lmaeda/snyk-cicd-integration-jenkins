@@ -28,7 +28,8 @@ pipeline {
 
         stage('Git Clone') {
             steps {
-                git url: 'https://github.com/lmaeda/simple-java-maven-app.git'
+                //git url: 'https://github.com/lmaeda/simple-java-maven-app.git'
+                git url: 'https://github.com/lmaeda/testproject-java-maven-app.git'
                 sh 'ls -la'
             }
         }
@@ -60,6 +61,7 @@ pipeline {
 
         stage('Build') {
             steps {
+              sh 'sh +e'
               sh 'mvn -e -X package'
             }
         }
@@ -69,6 +71,7 @@ pipeline {
         stage('Snyk Test using Snyk CLI') {
             steps {
                 sh './snyk test'
+                sh 'sh -e'
             }
         }
 
