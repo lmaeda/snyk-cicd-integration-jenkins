@@ -28,9 +28,9 @@ pipeline {
 
         stage('Git Clone') {
             steps {
-                //git url: 'https://github.com/lmaeda/simple-java-maven-app.git'
+                git url: 'https://github.com/lmaeda/simple-java-maven-app.git'
                 //git url: 'https://github.com/lmaeda/testproject-java-maven.git'
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GithubToken-lmaeda', url: 'https://github.com/lmaeda/simple-java-maven-app.git']]])
+                //checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GithubToken-lmaeda', url: 'https://github.com/lmaeda/simple-java-maven-app.git']]])
                 
                 sh 'ls -la'
             }
