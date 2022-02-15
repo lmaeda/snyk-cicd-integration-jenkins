@@ -70,7 +70,8 @@ pipeline {
         // Consider using --severity-threshold=<low|medium|high> for more granularity (see snyk help for more info).
         stage('Snyk Test using Snyk CLI') {
             steps {
-                sh './snyk test --fail-on=upgradable --severity-threshold=medium --org=luc.maeda'
+                //sh './snyk test --fail-on=upgradable --severity-threshold=medium --org=luc.maeda'
+                sh './snyk test --org=luc.maeda'
             }
         }
 
