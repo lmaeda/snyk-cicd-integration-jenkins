@@ -74,8 +74,8 @@ pipeline {
         // Consider using --severity-threshold=<low|medium|high> for more granularity (see snyk help for more info).
         stage('Snyk Test using Snyk CLI') {
             steps {
-                //sh './snyk test --fail-on=upgradable --severity-threshold=medium --org=luc.maeda'
-                sh './snyk test --org=luc.maeda'
+                //sh './snyk test --fail-on=upgradable --severity-threshold=medium --org=demo_high'
+                sh './snyk test --org=demo_high --target-reference="$(git branch --show-current)"'
             }
         }
 
@@ -84,7 +84,7 @@ pipeline {
         stage('Snyk Monitor using Snyk CLI') {
             steps {
                 // Use your own Snyk Organization with --org=<your-org>
-                sh './snyk monitor --org=luc.maeda'
+                sh './snyk monitor --org=demo_high --target-reference="$(git branch --show-current)"'
             }
         }
     }
